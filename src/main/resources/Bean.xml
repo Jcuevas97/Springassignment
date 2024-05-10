@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="Phone1" class="com.example.spring_assignment.Phone">
+    <property name="number" value="1234567890"/>
+    </bean>
+
+    <bean id="Phone2" class="com.example.spring_assignment.Phone">
+        <property name="number" value="0987654321"/>
+    </bean>
+
+
+    <bean id="Address" class="com.example.spring_assignment.Address">
+        <property name="city" value="New York"/>
+        <property name="state" value="NY"/>
+        <property name="country" value="USA"/>
+        <property name="zipcode" value="10001"/>
+    </bean>
+
+    <bean id="Student" class="com.example.spring_assignment.Student">
+        <property name="id" value="#{1}"/>
+        <property name="name" value="John"/>
+        <property name="ph">
+            <list>
+                <ref bean="Phone1"/>
+                <ref bean="Phone2"/>
+            </list>
+        </property>
+        <property name="add" ref="Address"/>
+    </bean>
+
+
+</beans>
